@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Groq</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- En-tête -->
+        <header class="header">
+            <div class="header-content">
+                <h1>💬 Chat Groq</h1>
+                <p>Posez vos questions à l'IA Groq</p>
+            </div>
+            <button id="clearBtn" class="clear-btn" title="Effacer la conversation">
+                🗑️ Effacer
+            </button>
+        </header>
+
+        <!-- Zone de messages -->
+        <main class="chat-container">
+            <div id="messages" class="messages">
+                <div class="message bot-message">
+                    <div class="message-content">
+                        Bonjour! Je suis Groq, votre assistant IA. Posez-moi vos questions! 👋
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Zone d'entrée -->
+        <footer class="input-container">
+            <form id="chatForm" class="chat-form">
+                <input 
+                    type="text" 
+                    id="messageInput" 
+                    class="message-input" 
+                    placeholder="Écrivez votre message..." 
+                    autocomplete="off"
+                />
+                <button type="submit" class="send-btn" title="Envoyer">
+                    ➤ Envoyer
+                </button>
+            </form>
+            <div id="statusMessage" class="status-message"></div>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
